@@ -1,34 +1,53 @@
-# End-to-End Sales Data Pipeline with AI Anomaly Detection
+# 🚀 AI-Driven Revenue Integrity & Sales Intelligence Suite
 
-## Overview
-A complete ETL pipeline engineered to process raw sales data, validate schemas, identify statistical anomalies using machine learning, and load the refined datasets into a relational database for visualization. 
+## 📌 Project Overview
+In modern retail environments, identifying "revenue leakage" is as critical as driving new sales. This project delivers an end-to-end data pipeline that combines **Business Intelligence** with **Unsupervised Machine Learning** to detect financial anomalies within $2.25M of transactional data.
 
-This project demonstrates core data engineering principles: data extraction, programmatic cleaning, machine learning integration, and SQL database loading.
+By automating the ETL (Extract, Transform, Load) process and deploying an Anomaly Detection model, this solution isolates high-risk orders that traditional rule-based filters often miss.
 
-## Architecture & Workflow
-1. **Extraction:** Python scripts locate and ingest raw CSV data.
-2. **Transformation:** Standardizes column schemas, enforces strict datetime formatting, and drops corrupted or incomplete records.
-3. **Machine Learning (AI Layer):** Implements an Isolation Forest algorithm (`scikit-learn`) to scan transaction histories and flag the top 2% most anomalous sales records (e.g., extreme spikes or drops).
-4. **Loading:** Automatically creates an SQLite database (`sales_database.db`) and securely loads clean data and AI-flagged records into distinct SQL tables.
-5. **Visualization:** Power BI connects directly to the SQLite database to visualize daily sales trends and isolate regional anomalies for business stakeholders.
+---
 
-## Tech Stack
-* **Language:** Python 3.x
-* **Data Processing:** Pandas
-* **Machine Learning:** Scikit-Learn (Isolation Forest)
-* **Database:** SQLite
-* **Visualization:** Power BI
+## 📸 Dashboard Preview
+![Executive Overview](page1.png)
+*Figure 1: Executive Sales Performance & Geospatial Analysis*
 
-## Repository Structure
-```text
-ai-data-pipeline-sales/
-├── data/
-│   ├── raw/               # Original CSV files
-│   └── processed/         # Cleaned CSVs and SQLite database
-├── scripts/
-│   ├── data_cleaning.py       # ETL extraction and transformation logic
-│   ├── anomaly_detection.py   # ML Isolation Forest implementation
-│   └── load_to_sql.py         # Database connection and table creation
-├── outputs/               # Generated anomaly reports
-├── dashboard/             # Power BI (.pbix) file
-└── README.md
+![Anomaly Deep Dive](page2.png)
+*Figure 2: AI-Flagged Forensic Investigation Interface*
+
+---
+
+## 🛠️ Tech Stack & Architecture
+| Layer | Technologies |
+| :--- | :--- |
+| **Data Engine** | Python (Pandas, NumPy) |
+| **AI/ML** | Scikit-Learn (Anomaly Detection) |
+| **Database** | SQL (SQLite) |
+| **Visualization** | Power BI (DAX, Advanced Modeling) |
+| **Workflow** | VS Code, Git/GitHub |
+
+### The "Investigator" Pipeline:
+1. **Validation:** Ingests raw data and performs automated cleaning via `data_cleaning.py`.
+2. **Storage:** Relational modeling within a portable **SQLite** environment.
+3. **Detection:** Machine Learning script identifies 195 outliers based on statistical variance in pricing and quantity.
+4. **Action:** Power BI dashboard enables stakeholders to deep-dive into the "Exactly at Risk" revenue ($635K).
+
+---
+
+## 🔍 Key Insights & Business Value
+- **Outlier Detection:** Successfully isolated 195 suspicious transactions.
+- **Revenue at Risk:** Quantified a total of **$635,430.10** in anomalous sales.
+- **Portability:** Built as a "Serverless" SQL architecture, allowing the full project to be shared and deployed instantly on any local machine.
+- **Granular Forensic View:** Designed a custom scatter plot to map transaction value against the timeline, identifying specific periods of high risk.
+
+---
+
+## 📂 Repository Structure
+- `scripts/`: Python ETL and ML logic.
+- `data/processed/`: The `sales_database.db` SQL file.
+- `dashboard/`: The interactive `.pbix` file.
+- `README.md`: Project documentation.
+
+---
+
+## 👤 Contact & Author
+**Dinesh Tanikanti** *Computer Science & Engineering | Data Investigator* [LinkedIn](www.linkedin.com/in/dinesh-tanikanti) | [Portfolio](YOUR_PORTFOLIO_URL)
