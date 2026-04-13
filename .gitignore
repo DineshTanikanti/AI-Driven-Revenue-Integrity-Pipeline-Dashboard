@@ -1,0 +1,11 @@
+# Ignore Python cache
+__pycache__/
+*.py[cod]
+
+# Ignore environment files
+.env
+venv/
+.vscode/
+
+# Ignore large temporary data if needed
+# data/raw/*.csv
